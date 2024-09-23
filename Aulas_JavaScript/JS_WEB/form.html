@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Manipulação de Formulários</title>
+</head>
+
+<body>
+	<h1>Formulário de Contato</h1>
+	<form id="meuFormulario">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome" required>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+		<input type="submit" value="Enviar">
+	</form>
+
+	<script>
+		// Seleciona o formulário
+		const formulario = document.getElementById('meuFormulario');
+
+		// Adiciona um evento de submissão ao formulário
+		formulario.addEventListener('submit', function (event) {
+			event.preventDefault(); // Previne o comportamento padrão de submissão
+
+			// Captura os dados dos campos de entrada
+			const nome = document.getElementById('nome').value;
+			const email = document.getElementById('email').value;
+
+			// Exibe os dados capturados no console
+			console.log('Nome:', nome);
+			console.log('Email:', email);
+
+			// Exibe uma mensagem de confirmação
+			alert(`Obrigado, ${nome}! Seu formulário foi enviado com sucesso.`);
+		});
+	</script>
+</body>
+
+</html>

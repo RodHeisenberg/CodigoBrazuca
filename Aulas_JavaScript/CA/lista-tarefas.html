@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Tarefas</title>
+	<style>
+		.concluida {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Lista de Tarefas</h1>
+	<input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa">
+	<button id="adicionarTarefa">Adicionar Tarefa</button>
+	<ul id="listaTarefas"></ul>
+	<button id="removerConcluidas">Remover Concluídas</button>
+	<button id="salvarTarefas">Salvar Tarefas</button>
+
+	<script>
+		const listaTarefas = document.getElementById('listaTarefas');
+		const novaTarefaInput = document.getElementById('novaTarefa');
+		const botaoAdicionar = document.getElementById('adicionarTarefa');
+		const botaoRemoverConcluidas = document.getElementById('removerConcluidas');
+		const botaoSalvarTarefas = document.getElementById('salvarTarefas');
+
+		// Função para adicionar tarefas
+		botaoAdicionar.addEventListener('click', function () {
+			const tarefaTexto = novaTarefaInput.value.trim();
+			if (tarefaTexto) {
+				const novaTarefa = document.createElement('li');
+				novaTarefa.textContent = tarefaTexto;
+				listaTarefas.appendChild(novaTarefa);
+				novaTarefaInput.value = '';
+			}
+		});
+
+		// Função para marcar tarefas como concluídas
+		listaTarefas.addEventListener('click', function (event) {
+			if (event.target.tagName === 'LI') {
+				event.target.classList.toggle('concluida');
+			}
+		});
+
+		// Função para remover tarefas concluídas
+		botaoRemoverConcluidas.addEventListener('click', function () {
+			const tarefasConcluidas = document.querySelectorAll('.concluida');
+			tarefasConcluidas.forEach(function (tarefa) {
+				tarefa.remove();
+			});
+		});
+
+		// Função para simular salvamento de tarefas
+		function salvarTarefas(tarefas) {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve('Tarefas salvas com sucesso!');
+				}, 1000);
+			});
+		}
+
+		// Função para salvar tarefas
+		botaoSalvarTarefas.addEventListener('click', async function () {
+			const tarefas = Array.from(document.querySelectorAll('#listaTarefas li')).map(tarefa => tarefa.textContent);
+			try {
+				const mensagem = await salvarTarefas(tarefas);
+				alert(mensagem);
+			} catch (erro) {
+				console.error('Erro ao salvar tarefas:', erro);
+			}
+		});
+	</script>
+</body>
+
+</html>

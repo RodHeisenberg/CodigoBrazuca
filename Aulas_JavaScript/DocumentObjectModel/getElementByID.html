@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exemplo de getElementById</title>
+</head>
+
+<body>
+	<h1 id="titulo">Título da Página</h1>
+	<button onclick="alterarTitulo()">Alterar Título</button>
+
+	<script>
+		function alterarTitulo() {
+			// Acessa o elemento com o id 'titulo'
+			const titulo = document.getElementById('titulo');
+			// Altera o texto do elemento
+			titulo.textContent = 'Novo Título!';
+		}
+	</script>
+</body>
+
+</html>

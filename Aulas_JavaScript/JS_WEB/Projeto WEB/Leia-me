@@ -1,0 +1,14 @@
+projeto/
+│
+├── index.html
+├── styles.css
+└── script.js
+
+
+Objetivos do Projeto
+Criar uma aplicação web que interaja com uma API RESTful para listar e adicionar usuários.
+Implementar validação de formulários no lado do cliente.
+Usar AJAX para operações assíncronas.
+
+Este projeto será uma aplicação de lista de usuários, onde os usuários podem ser carregados
+de uma API, e novos usuários podem ser adicionados através de um formulário com validação.

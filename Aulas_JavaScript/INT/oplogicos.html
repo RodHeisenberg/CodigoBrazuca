@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Operadores Lógicos</title>
+</head>
+
+<body>
+	<h1>Exemplo de Operadores Lógicos em JavaScript</h1>
+	<script>
+		let cond1 = true;
+		let cond2 = false;
+
+		// Operador Lógico AND - E (&&)
+		document.write("<p>cond1 AND cond2: " + (cond1 && cond2) + "<p>");
+		// No AND ou E - Só será verdadeiro quandos as duas condições forem verdadeiras
+		// Resultado é FALSE
+
+		// Operador Lógico OR - OU (||)
+		document.write("<p>cond1 OR cond2: " + (cond1 || cond2) + "<p>");
+		// No OR ou OU - Só é Falso quando as duas forem Falsos
+		// Resultado é TRUE
+
+		// Operador Lógico NOT (!)
+		document.write("<p>NOT cond1 " + (!cond1) + "<p>");
+		// Inverter o Valor - Se TRUE vira FALSE, SE FALSE vira TRUE
+		// Resultado é FALSE
+	</script>
+</body>
+
+</html>

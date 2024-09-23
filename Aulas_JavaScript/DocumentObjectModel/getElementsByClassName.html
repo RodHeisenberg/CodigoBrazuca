@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exemplo de getElementsByClassName</title>
+</head>
+
+<body>
+	<p class="texto">Parágrafo 1</p>
+	<p class="texto">Parágrafo 2</p>
+	<p class="texto">Parágrafo 3</p>
+	<button onclick="alterarTexto()">Alterar Texto</button>
+
+	<script>
+		function alterarTexto() {
+			// Acessa todos os elementos com a classe 'texto'
+			const paragrafos = document.getElementsByClassName('texto');
+			// Percorre cada elemento e altera o texto
+			for (let i = 0; i < paragrafos.length; i++) {
+				paragrafos[i].textContent = 'Texto alterado!';
+			}
+		}
+	</script>
+</body>
+
+</html>

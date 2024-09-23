@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exemplo de querySelector</title>
+</head>
+
+<body>
+	<h1 class="titulo">Título Principal</h1>
+	<h1 class="titulo">Título Secundário</h1>
+	<button onclick="alterarCor()">Alterar Cor</button>
+
+	<script>
+		function alterarCor() {
+			// Acessa o primeiro elemento com a classe 'titulo'
+			const titulo = document.querySelector('.titulo');
+			// Altera a cor do texto do elemento
+			titulo.style.color = 'blue';
+
+			// Acessa todos os elementos com a classe 'titulo'
+			const titulos = document.querySelectorAll('.titulo');
+			// Percorre cada elemento e altera a cor
+			titulos.forEach(function (titulo) {
+				titulo.style.color = 'pink';
+			});
+		}
+	</script>
+</body>
+
+</html>

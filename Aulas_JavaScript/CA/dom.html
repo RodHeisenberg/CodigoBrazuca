@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Manipulação do DOM</title>
+</head>
+
+<body>
+	<div id="conteudo">
+		<p>Texto original</p>
+	</div>
+	<button id="adicionarTexto">Adicionar Texto</button>
+	<button id="atualizarTexto">Atualizar Texto</button>
+	<button id="removerTexto">Remover Texto</button>
+
+	<script>
+		const conteudo = document.getElementById('conteudo');
+		const adicionarTexto = document.getElementById('adicionarTexto');
+		const atualizarTexto = document.getElementById('atualizarTexto');
+		const removerTexto = document.getElementById('removerTexto');
+
+		// Adicionando um novo parágrafo ao div
+		adicionarTexto.addEventListener('click', function () {
+			const novoParagrafo = document.createElement('p');
+			novoParagrafo.textContent = 'Este é um novo parágrafo.';
+			conteudo.appendChild(novoParagrafo);
+		});
+
+		// Atualizando o texto do parágrafo existente
+		atualizarTexto.addEventListener('click', function () {
+			const paragrafo = conteudo.querySelector('p');
+			if (paragrafo) {
+				paragrafo.textContent = 'Texto atualizado';
+			}
+		});
+
+		// Removendo o parágrafo
+		removerTexto.addEventListener('click', function () {
+			const paragrafo = conteudo.querySelector('p');
+			if (paragrafo) {
+				paragrafo.remove();
+			}
+		});
+	</script>
+</body>
+
+</html>

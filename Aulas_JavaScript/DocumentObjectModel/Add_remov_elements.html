@@ -1,0 +1,23 @@
+<button onclick="adicionarElemento()">Adicionar Elemento</button>
+<button onclick="removerElemento()">Remover Elemento</button>
+<div id="container"></div>
+
+<script>
+	function adicionarElemento() {
+		// Cria um novo elemento 'div'
+		const novoElemento = document.createElement('div');
+		// Adiciona texto ao novo elemento
+		novoElemento.textContent = 'Este é um novo elemento!';
+		// Adiciona o novo elemento ao 'container'
+		document.getElementById('container').appendChild(novoElemento);
+	}
+
+	function removerElemento() {
+		// Acessa o 'container'
+		const container = document.getElementById('container');
+		// Remove o último filho de 'container' se existir
+		if (container.lastChild) {
+			container.removeChild(container.lastChild);
+		}
+	}
+</script>

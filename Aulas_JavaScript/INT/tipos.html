@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tipos de Dados</title>
+</head>
+
+<body>
+	<h1>Exemplo de Tipos de Dados em JavaScript</h1>
+	<script>
+		let nome = "Abelha";
+		let idade = 25;
+		let isAdulto = true;
+		let salario = null;
+		let endereco;
+
+
+		let codigob = {
+			nome: "Abelha",
+			idade: 18,
+			cidade: "Rio de Janeiro"
+		}
+
+		document.write("<p>Nome: " + nome + "</p>");
+		document.write("<p>Idade: " + idade + "</p>");
+		document.write("<p>É adulto: " + isAdulto + "</p>");
+		document.write("<p>Salário: " + salario + "</p>");
+		document.write("<p>Endereço: " + endereco + "</p>");
+		document.write("<p>codigob:" + JSON.stringify(codigob) + "</p>")
+	</script>
+</body>
+
+</html>

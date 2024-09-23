@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo de AJAX</title>
+</head>
+
+<body>
+	<h1>Requisição AJAX</h1>
+	<button id="carregarDados">Carregar Dados</button>
+	<div id="resultado"></div>
+
+	<script>
+		const carregarDados = document.getElementById('carregarDados');
+		const resultado = document.getElementById('resultado');
+
+		carregarDados.addEventListener('click', function () {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					const dados = JSON.parse(xhr.responseText);
+					resultado.innerHTML = `<h3>${dados.title}</h3><p>${dados.body}</p>`;
+				}
+			};
+			xhr.send();
+		});
+	</script>
+</body>
+
+</html>

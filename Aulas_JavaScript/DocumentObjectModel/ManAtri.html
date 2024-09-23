@@ -1,0 +1,13 @@
+<img id="minhaImagem" src="img01.jpg" alt="Imagem Exemplo">
+<button onclick="trocarImagem()">Trocar Imagem</button>
+
+<script>
+	function trocarImagem() {
+		// Acessa o elemento imagem pelo id
+		const imagem = document.getElementById('minhaImagem');
+		// Altera o atributo 'src' da imagem
+		imagem.setAttribute('src', 'img02.png');
+		// Alternativamente, poderíamos usar:
+		// imagem.src = 'imagem2.jpg';
+	}
+</script>
